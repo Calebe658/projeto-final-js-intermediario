@@ -1,0 +1,12 @@
+#resultadoInformacoes h2 {
+    text-align: center;
+}
+
+#resultadoInformacoes img {
+    width: 150px;
+}
+
+#mensagem-erro {
+    color: red;
+    text-align: center;
+}
