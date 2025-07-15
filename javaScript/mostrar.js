@@ -24,11 +24,11 @@ botao.addEventListener('click', () => {
         <p> <b>Nome:</b> ${pessoaEncontrada.nome} </p>
         <p> <b>Sexo:</b> ${pessoaEncontrada.sexo} </p>
         <p> <b>Data de Nascimento:</b> ${new Date(pessoaEncontrada.dataNascimento).toLocaleDateString("pt-br")} </p>
-        <p> <b>Idade:</b> ${pessoaEncontrada.idade} anos de idade</p>
+        <p> <b>Idade:</b> ${pessoaEncontrada.idade} anos de idade </p>
         <p> <b>Grau de Escolaridade:</b> ${pessoaEncontrada.grauEscolaridade} </p>
         <p> <b>Endereço:</b> ${pessoaEncontrada.endereco} </p>
-        <p> <b>Salário: R$</b> ${pessoaEncontrada.salario} </p>
-        <p> <b>Vale Transporte: R$</b> ${pessoaEncontrada.desconto} </p>
+        <p> <b>Salário:</b> ${pessoaEncontrada.salario} R$ </p>
+        <p> <b>Vale Transporte:</b> ${pessoaEncontrada.desconto} R$ </p>
         <p> <b>Foto:</b> </p>
         <img src="${pessoaEncontrada.foto}" alt="Foto Da Pessoa">`;
 
