@@ -27,8 +27,8 @@ botao.addEventListener('click', () => {
         <p> <b>Idade:</b> ${pessoaEncontrada.idade} anos de idade </p>
         <p> <b>Grau de Escolaridade:</b> ${pessoaEncontrada.grauEscolaridade} </p>
         <p> <b>Endereço:</b> ${pessoaEncontrada.endereco} </p>
-        <p> <b>Salário:</b> ${pessoaEncontrada.salario} R$ </p>
-        <p> <b>Vale Transporte:</b> ${pessoaEncontrada.desconto} R$ </p>
+        <p> <b>Salário:</b> ${pessoaEncontrada.salario} R$</p>
+        <p> <b>Vale Transporte:</b> ${pessoaEncontrada.desconto} R$</p>
         <p> <b>Foto:</b> </p>
         <img src="${pessoaEncontrada.foto}" alt="Foto Da Pessoa">`;
 
