@@ -6,7 +6,7 @@ export function desconto(pessoas) {
             pessoa.desconto = (salario * 0.06).toFixed(2);
 
         } else {
-            pessoa.desconto = `Não optou pelo VT`;
+            pessoa.desconto = "Não optou pelo VT";
         }
     });
 }

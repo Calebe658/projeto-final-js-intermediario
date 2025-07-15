@@ -7,10 +7,10 @@ const sugestoes = document.getElementById('sugestoes');
 input.addEventListener('input', () => {
     const nomeDigitado = input.value.trim().toLowerCase();
 
-    sugestoes.innerHTML = '';
+    sugestoes.innerHTML = "";
 
-    if (nomeDigitado === '') {
-        resultadoInformacoes.innerHTML = '';
+    if (nomeDigitado == "") {
+        resultadoInformacoes.innerHTML = "";
         return;
     }
 
