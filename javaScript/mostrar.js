@@ -7,35 +7,40 @@ desconto(pessoas);
 
 const input = document.getElementById('pessoa-input');
 const resultado = document.getElementById('resultadoInformacoes');
-const erro = document.getElementById('mensagem-erro');
 const botao = document.getElementById('buscar-btn');
 
-botao.addEventListener('click', () => {
+input.addEventListener('input', () => {
     const nomeDigitado = input.value.trim().toLowerCase();
 
-    const pessoaFiltrada = pessoas.filter(pessoa => {
-        return pessoa.nome.toLowerCase() === nomeDigitado;
+    const pessoasFiltradas = pessoas.filter(pessoa => {
+        return pessoa.nome.toLowerCase().includes(nomeDigitado);
     });
 
-    const pessoaEncontrada = pessoaFiltrada[0];
+    resultado.innerHTML = "";
 
-    if (pessoaEncontrada) {
-        resultado.innerHTML = `<h2> Informações da Pessoa: </h2>
-        <p> <b>Nome:</b> ${pessoaEncontrada.nome} </p>
-        <p> <b>Sexo:</b> ${pessoaEncontrada.sexo} </p>
-        <p> <b>Data de Nascimento:</b> ${new Date(pessoaEncontrada.dataNascimento).toLocaleDateString("pt-br")} </p>
-        <p> <b>Idade:</b> ${pessoaEncontrada.idade} anos de idade </p>
-        <p> <b>Grau de Escolaridade:</b> ${pessoaEncontrada.grauEscolaridade} </p>
-        <p> <b>Endereço:</b> ${pessoaEncontrada.endereco} </p>
-        <p> <b>Salário:</b> ${pessoaEncontrada.salario} R$</p>
-        <p> <b>Vale Transporte:</b> ${pessoaEncontrada.desconto} R$</p>
-        <p> <b>Foto:</b> </p>
-        <img src="${pessoaEncontrada.foto}" alt="Foto Da Pessoa">`;
+    if (pessoasFiltradas.length > 0) {
 
-        erro.textContent = '';
+        pessoasFiltradas.forEach(pessoa => {
+            resultado.innerHTML += `
+                <h2>Informações da Pessoa:</h2>
+                <p><b>Nome:</b> ${pessoa.nome}</p>
+                <p><b>Sexo:</b> ${pessoa.sexo}</p>
+                <p><b>Data de Nascimento:</b> ${new Date(pessoa.dataNascimento).toLocaleDateString("pt-br")}</p>
+                <p><b>Idade:</b> ${pessoa.idade} anos de idade</p>
+                <p><b>Grau de Escolaridade:</b> ${pessoa.grauEscolaridade}</p>
+                <p><b>Endereço:</b> ${pessoa.endereco}</p>
+                <p><b>Salário:</b> ${pessoa.salario} </p>
+                <p><b>Vale Transporte:</b> ${pessoa.desconto}</p>
+
+                <p><b>Foto:</b></p>
+                <img src="${pessoa.foto}" alt="Foto Da Pessoa" style="max-width: 150px; margin-bottom: 20px;">
+                <hr>`
+        });
 
     } else {
-        erro.textContent = "Pessoa não encontrada.";
-        resultado.innerHTML = '';
+        resultado.innerHTML = `<p class="text-center" style="color: red;"> Pessoa não encontrada </p>`
+
+    } if (nomeDigitado == "") {
+        resultado.innerHTML = "";
     }
 });

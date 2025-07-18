@@ -3,10 +3,5 @@
 }
 
 #resultadoInformacoes img {
-    width: 150px;
-}
-
-#mensagem-erro {
-    color: red;
-    text-align: center;
+    width: 200px;
 }
