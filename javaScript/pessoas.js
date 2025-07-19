@@ -51,7 +51,7 @@ export const pessoas = [
         endereco: "Travessa das Acácias, 12 - Recife",
         opcaoVT: true,
         salario: 5932.45,
-        passagemDiaria: 19,
+        passagemDiaria: 10,
         foto: "https://images.generated.photos/V20zN8heB4PqZhsxkjwy81gWVv1QlFkgoB9d9huQB2E/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzYwMzc4LmpwZw.jpg"
     },
     {

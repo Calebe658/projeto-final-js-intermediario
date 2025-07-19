@@ -1,9 +1,11 @@
 import { pessoas } from './pessoas.js';
 import { calcularIdade } from './calcularIdade.js';
 import { desconto } from './calcularDesconto.js';
+import { descontoFGTS } from './calcularDescontoFGTS.js'
 
 calcularIdade(pessoas);
 desconto(pessoas);
+descontoFGTS(pessoas);
 
 const input = document.getElementById('pessoa-input');
 const resultado = document.getElementById('resultadoInformacoes');
@@ -30,7 +32,9 @@ input.addEventListener('input', () => {
                 <p><b>Grau de Escolaridade:</b> ${pessoa.grauEscolaridade}</p>
                 <p><b>Endereço:</b> ${pessoa.endereco}</p>
                 <p><b>Salário:</b> ${pessoa.salario} </p>
-                <p><b>Vale Transporte:</b> ${pessoa.desconto}</p>
+                <p><b>Valor a descontar do funcionário (Vale Transporte):</b> ${pessoa.desconto}</p>
+                <p><b>Valor a pagar pela empresa (Vale Transporte):</b> ${pessoa.debitoEmpresa}</p>
+                <p><b>Valor a pagar pela empresa (FGTS):</b> ${pessoa.descontofgts}</p>
 
                 <p><b>Foto:</b></p>
                 <img src="${pessoa.foto}" alt="Foto Da Pessoa" style="max-width: 150px; margin-bottom: 20px;">
