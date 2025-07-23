@@ -1,0 +1,16 @@
+label {
+    font-weight: bold;
+}
+
+input:hover {
+    transition: 0.3s;
+    background-color: rgb(239, 239, 243);
+}
+
+#resultado>h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}

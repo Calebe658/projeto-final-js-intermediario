@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Buscar pessoas</title>
+    <title>Buscar Funcionários</title>
     <link rel="stylesheet" href="./css/estilo.css">
 </head>
 
@@ -14,16 +14,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card p-4">
-                    <h2 class="text-center mb-4">Buscador de Pessoas</h2>
+                    <h2 class="text-center mb-4">Lista de Funcionários</h2>
 
-                    <label for="pessoa-input" class="form-label">Busque o nome da pessoa digitando:</label>
+                    <label for="pessoa-input" class="form-label">Busque o nome do funcionário digitando:</label>
                     <input type="text" id="pessoa-input" class="form-control mb-3" list="sugestoes"
-                        placeholder="Exemplo: Júnior">
+                        placeholder="Exemplo: Eduardo">
 
                     <datalist id="sugestoes"></datalist>
 
                     <button id="buscar-btn" class="btn btn-primary w-100 mb-3" disabled>
-                        Buscar Informações da Pessoa
+                        Buscar Informações do Funcionário
                     </button>
 
                     <div id="resultadoInformacoes">
