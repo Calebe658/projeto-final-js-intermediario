@@ -1,6 +1,7 @@
 export const pessoas = [
     {
         nome: "Thais",
+        sobrenome: "Silva",
         sexo: "Feminino",
         dataNascimento: "04/05/1997",
         grauEscolaridade: "Ensino Médio Completo",
@@ -12,6 +13,7 @@ export const pessoas = [
     },
     {
         nome: "Arthur",
+        sobrenome: "Costa",
         sexo: "Masculino",
         dataNascimento: "10/19/1980",
         grauEscolaridade: "Ensino Médio Incompleto",
@@ -23,6 +25,7 @@ export const pessoas = [
     },
     {
         nome: "Rayssa",
+        sobrenome: "Menezes",
         sexo: "Feminino",
         dataNascimento: "02/11/2000",
         grauEscolaridade: "Ensino Superior Completo",
@@ -34,6 +37,7 @@ export const pessoas = [
     },
     {
         nome: "Lucas",
+        sobrenome: "Oliveira",
         sexo: "Masculino",
         dataNascimento: "03/12/1990",
         grauEscolaridade: "Ensino Superior Completo",
@@ -45,6 +49,7 @@ export const pessoas = [
     },
     {
         nome: "Fernanda",
+        sobrenome: "Souza",
         sexo: "Feminino",
         dataNascimento: "09/04/1996",
         grauEscolaridade: "Ensino Médio Completo",
@@ -56,6 +61,7 @@ export const pessoas = [
     },
     {
         nome: "Eduardo",
+        sobrenome: "Lima",
         sexo: "Masculino",
         dataNascimento: "06/25/1987",
         grauEscolaridade: "Ensino Superior Incompleto",
@@ -67,6 +73,7 @@ export const pessoas = [
     },
     {
         nome: "Mariana",
+        sobrenome: "Ribeiro",
         sexo: "Feminino",
         dataNascimento: "12/03/1993",
         grauEscolaridade: "Técnico Completo",
@@ -78,6 +85,7 @@ export const pessoas = [
     },
     {
         nome: "Bruno",
+        sobrenome: "Almeida",
         sexo: "Masculino",
         dataNascimento: "05/14/1999",
         grauEscolaridade: "Ensino Médio Incompleto",
@@ -86,4 +94,5 @@ export const pessoas = [
         salario: 1587.36,
         passagemDiaria: 20,
         foto: "https://images.generated.photos/A8vlhcIKmbfXfzrIryt93bKh68dOSB-fdAadxEE9PvE/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/OTc3MDUwLmpwZw.jpg"
-    }];
+    }
+];

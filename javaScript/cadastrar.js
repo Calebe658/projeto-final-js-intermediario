@@ -1,4 +1,6 @@
-function cadastrar() {
+import { pessoas } from "./pessoas.js"
+
+export function cadastrar() {
     const nome = document.getElementById("nome").value.trim();
     const sobrenome = document.getElementById("sobrenome").value.trim();
     const dataNascimento = document.getElementById("dataNascimento").value;
@@ -12,23 +14,43 @@ function cadastrar() {
     const masculino = document.getElementById("Masculino").checked;
     const feminino = document.getElementById("Feminino").checked;
 
+    // Armazenar o valor dos radios em apenas 1 variável (valor booleano)
     const valeTransporte = vtSim ? "Sim" : (vtNao ? "Não" : "Não selecionado");
     const sexo = masculino ? "Masculino" : (feminino ? "Feminino" : "Não selecionado");
 
     const resultado = document.getElementById("resultado");
 
-    resultado.innerHTML += `<h2> Dados Cadastrados <h2>
-    <div style="Text-align: left">
-    <p><b>Nome:</b> ${nome} ${sobrenome}</p>
-    <p><b>Data de nascimento:</b> ${dataNascimento}</p>
-    <p><b>Sexo:</b> ${sexo}</p>
-    <p><b>Escolaridade:</b> ${escolaridade}</p>
-    <p><b>Endereço:</b> ${endereco}</p>
-    <p><b>Salário:</b> ${salario}</p>
-    <p><b>Valor de passagem diário:</b> ${passagemDiaria}</p>
-    <p><b>Opção pelo VT:</b> ${valeTransporte}</p>
-    </div>
-    
-    <hr>
-    `
+    if (sexo == "Masculino") {
+        pessoas.push({
+            nome: nome,
+            sobrenome: sobrenome,
+            sexo: sexo,
+            dataNascimento: dataNascimento,
+            grauEscolaridade: escolaridade,
+            endereco: endereco,
+            opcaoVT: valeTransporte,
+            salario: salario,
+            passagemDiaria: passagemDiaria,
+            foto: "https://images.generated.photos/qdRkkFheZD0Xgu6DuVqpwgkC4vDNWFn_Bk3l3x7Xp2c/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjAwMzE5LmpwZw.jpg"
+        })
+
+    } else {
+        pessoas.push({
+            nome: nome,
+            sobrenome: sobrenome,
+            sexo: sexo,
+            dataNascimento: dataNascimento,
+            grauEscolaridade: escolaridade,
+            endereco: endereco,
+            opcaoVT: valeTransporte,
+            salario: salario,
+            passagemDiaria: passagemDiaria,
+            foto: "https://images.generated.photos/Dy-ZOOKOLxFWarU0WdH0l7fZhe9AWxiXMX3zx_FiF_Q/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzY1NjQ2LmpwZw.jpg"
+        })
+    }
+
+    console.log(pessoas);
+
 }
+
+window.cadastrar = cadastrar;

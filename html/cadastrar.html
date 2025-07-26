@@ -20,23 +20,24 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <label for="nome">Nome:</label>
-                                <input type="text" id="nome" class="form-control" placeholder="Digite o nome">
+                                <input type="text" id="nome" class="form-control" placeholder="Digite o nome" required>
                             </div>
 
                             <div class="col">
                                 <label for="sobrenome">Sobrenome:</label>
-                                <input type="text" id="sobrenome" class="form-control" placeholder="Digite o sobrenome">
+                                <input type="text" id="sobrenome" class="form-control" placeholder="Digite o sobrenome"
+                                    required>
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="dataNascimento">Data de Nascimento:</label>
-                            <input type="date" id="dataNascimento" class="form-control">
+                            <input type="date" id="dataNascimento" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="escolaridade">Escolaridade:</label>
-                            <select name="escolaridade" id="escolaridade" class="form-control">
+                            <select name="escolaridade" id="escolaridade" class="form-control" required>
                                 <option value="">Selecione</option>
                                 <option value="Ensino fundamental incompleto">Ensino fundamental incompleto</option>
                                 <option value="Ensino fundamental completo">Ensino fundamental completo</option>
@@ -50,27 +51,27 @@
 
                         <div class="mb-3">
                             <label for="endereco">Endereço:</label>
-                            <input type="text" id="endereco" class="form-control">
+                            <input type="text" id="endereco" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="salario">Salário:</label>
-                            <input type="number" id="salario" class="form-control">
+                            <input type="number" id="salario" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="passagemDiaria">Valor de passagem diário:</label>
-                            <input type="number" id="passagemDiaria" class="form-control">
+                            <input type="number" id="passagemDiaria" class="form-control" required>
                         </div>
 
                         <div class="d-flex justify-content-around mb-3">
                             <div>
                                 <label class="form-label">Opção pelo VT:</label>
                                 <div class="radio-group">
-                                    <input type="radio" name="vt" value="sim" id="valeTransporte-sim">
+                                    <input type="radio" name="vt" value="sim" id="valeTransporte-sim" required>
                                     <label for="valeTransporte-sim">Sim</label>
 
-                                    <input type="radio" name="vt" value="nao" id="valeTransporte-nao">
+                                    <input type="radio" name="vt" value="nao" id="valeTransporte-nao" required>
                                     <label for="valeTransporte-nao">Não</label>
                                 </div>
                             </div>
@@ -78,16 +79,16 @@
                             <div>
                                 <label class="form-label">Sexo:</label>
                                 <div class="radio-group">
-                                    <input type="radio" name="sexo" value="masculino" id="Masculino">
+                                    <input type="radio" name="sexo" value="masculino" id="Masculino" required>
                                     <label for="Masculino">Masculino</label>
 
-                                    <input type="radio" name="sexo" value="feminino" id="Feminino">
+                                    <input type="radio" name="sexo" value="feminino" id="Feminino" required>
                                     <label for="Feminino">Feminino</label>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="button" id="botaoCadastro" class="btn btn-primary w-100 mt-3" onclick="cadastrar()">
+                        <button id="botaoCadastro" class="btn btn-primary w-100 mt-3" onclick="cadastrar()">
                             Cadastrar funcionário
                         </button>
                     </form>
@@ -102,7 +103,7 @@
         </div>
     </div>
 
-    <script src="../javaScript/cadastrar.js"></script>
+    <script type="module" src="../javaScript/cadastrar.js"></script>
 </body>
 
 </html>
