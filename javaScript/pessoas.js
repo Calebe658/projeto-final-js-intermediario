@@ -13,19 +13,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Auxiliar de Escritório",
-                salarioAnterior: 1432.58,
+                salarioHistorico: 1432.58,
                 dataInicio: "2017-06-10",
                 dataFim: "2019-03-15"
             },
             {
                 cargo: "Técnico de Suporte",
-                salarioAnterior: 2189.31,
+                salarioHistorico: 2189.31,
                 dataInicio: "2019-04-10",
                 dataFim: "2021-08-20"
             },
             {
                 cargo: "Analista de Qualidade",
-                salarioAnterior: 2795.64,
+                salarioHistorico: 2795.64,
                 dataInicio: "2021-09-01",
                 dataFim: null
             }
@@ -45,19 +45,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Operador de Produção",
-                salarioAnterior: 1550.75,
+                salarioHistorico: 1550.75,
                 dataInicio: "2015-01-05",
                 dataFim: "2017-06-01"
             },
             {
                 cargo: "Supervisor de Logística",
-                salarioAnterior: 3399.8,
+                salarioHistorico: 3399.8,
                 dataInicio: "2017-07-10",
                 dataFim: "2020-11-30"
             },
             {
                 cargo: "Gerente de Operações",
-                salarioAnterior: 4798.29,
+                salarioHistorico: 4798.29,
                 dataInicio: "2021-01-15",
                 dataFim: null
             }
@@ -77,19 +77,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Estagiária de Marketing",
-                salarioAnterior: 1200.0,
+                salarioHistorico: 1200.0,
                 dataInicio: "2019-01-10",
                 dataFim: "2020-12-01"
             },
             {
                 cargo: "Coordenadora de Projetos",
-                salarioAnterior: 1955.67,
+                salarioHistorico: 1955.67,
                 dataInicio: "2021-01-05",
                 dataFim: "2022-12-10"
             },
             {
                 cargo: "Gerente de Produto",
-                salarioAnterior: 3188.92,
+                salarioHistorico: 3188.92,
                 dataInicio: "2023-01-15",
                 dataFim: null
             }
@@ -109,19 +109,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Assistente de TI",
-                salarioAnterior: 1740.0,
+                salarioHistorico: 1740.0,
                 dataInicio: "2016-04-02",
                 dataFim: "2018-08-20"
             },
             {
                 cargo: "Analista de Redes",
-                salarioAnterior: 2840.45,
+                salarioHistorico: 2840.45,
                 dataInicio: "2018-09-01",
                 dataFim: "2021-05-30"
             },
             {
                 cargo: "Coordenador de Infraestrutura",
-                salarioAnterior: 3265.12,
+                salarioHistorico: 3265.12,
                 dataInicio: "2021-07-01",
                 dataFim: null
             }
@@ -141,19 +141,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Auxiliar de RH",
-                salarioAnterior: 1589.89,
+                salarioHistorico: 1589.89,
                 dataInicio: "2018-05-10",
                 dataFim: "2019-10-05"
             },
             {
                 cargo: "Especialista em Treinamento",
-                salarioAnterior: 2665.2,
+                salarioHistorico: 2665.2,
                 dataInicio: "2020-01-15",
                 dataFim: "2022-03-15"
             },
             {
                 cargo: "Coordenadora de RH",
-                salarioAnterior: 3890.78,
+                salarioHistorico: 3890.78,
                 dataInicio: "2022-04-01",
                 dataFim: null
             }
@@ -173,19 +173,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Auxiliar Contábil",
-                salarioAnterior: 2200.1,
+                salarioHistorico: 2200.1,
                 dataInicio: "2014-09-01",
                 dataFim: "2016-12-01"
             },
             {
                 cargo: "Analista Financeiro",
-                salarioAnterior: 3550.45,
+                salarioHistorico: 3550.45,
                 dataInicio: "2017-02-20",
                 dataFim: "2019-08-10"
             },
             {
                 cargo: "Supervisor de Controladoria",
-                salarioAnterior: 4890.0,
+                salarioHistorico: 4890.0,
                 dataInicio: "2020-01-01",
                 dataFim: null
             }
@@ -205,19 +205,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Técnica em Enfermagem",
-                salarioAnterior: 1400.0,
+                salarioHistorico: 1400.0,
                 dataInicio: "2017-01-20",
                 dataFim: "2018-11-25"
             },
             {
                 cargo: "Supervisora Clínica",
-                salarioAnterior: 3085.55,
+                salarioHistorico: 3085.55,
                 dataInicio: "2019-02-01",
                 dataFim: "2021-09-15"
             },
             {
                 cargo: "Gerente de Unidade",
-                salarioAnterior: 4820.9,
+                salarioHistorico: 4820.9,
                 dataInicio: "2022-01-10",
                 dataFim: null
             }
@@ -237,19 +237,19 @@ export const pessoas = [
         historico: [
             {
                 cargo: "Atendente Comercial",
-                salarioAnterior: 1300,
+                salarioHistorico: 1300,
                 dataInicio: "2018-01-15",
                 dataFim: "2019-12-31"
             },
             {
                 cargo: "Auxiliar Administrativo",
-                salarioAnterior: 1450,
+                salarioHistorico: 1450,
                 dataInicio: "2020-01-01",
                 dataFim: "2021-12-31"
             },
             {
                 cargo: "Assistente de Vendas",
-                salarioAnterior: 1518,
+                salarioHistorico: 1518,
                 dataInicio: "2022-01-01",
                 dataFim: null
             }
