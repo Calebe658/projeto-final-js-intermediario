@@ -1,9 +1,10 @@
 export const pessoas = [
     {
+        id: 1,
         nome: "Thais",
         sobrenome: "Silva",
         sexo: "Feminino",
-        dataNascimento: "04/05/1997",
+        dataNascimento: "1997-05-04",
         grauEscolaridade: "Ensino Médio Completo",
         endereco: "Rua Joana e Maria, 234 - São Paulo",
         opcaoVT: true,
@@ -32,10 +33,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 2,
         nome: "Arthur",
         sobrenome: "Costa",
         sexo: "Masculino",
-        dataNascimento: "10/19/1980",
+        dataNascimento: "1980-10-19",
         grauEscolaridade: "Ensino Médio Incompleto",
         endereco: "Estrada Da Ligação, 788 - Rio De Janeiro",
         opcaoVT: false,
@@ -64,10 +66,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 3,
         nome: "Rayssa",
         sobrenome: "Menezes",
         sexo: "Feminino",
-        dataNascimento: "02/11/2000",
+        dataNascimento: "2000-11-02",
         grauEscolaridade: "Ensino Superior Completo",
         endereco: "Rua Travessa da Paz, 635 - Belo Horizonte",
         opcaoVT: true,
@@ -96,10 +99,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 4,
         nome: "Lucas",
         sobrenome: "Oliveira",
         sexo: "Masculino",
-        dataNascimento: "03/12/1990",
+        dataNascimento: "1990-12-03",
         grauEscolaridade: "Ensino Superior Completo",
         endereco: "Rua Dom Pedro II, 321 - Porto Alegre",
         opcaoVT: true,
@@ -128,10 +132,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 5,
         nome: "Fernanda",
         sobrenome: "Souza",
         sexo: "Feminino",
-        dataNascimento: "09/04/1996",
+        dataNascimento: "1996-04-09",
         grauEscolaridade: "Ensino Médio Completo",
         endereco: "Travessa das Acácias, 12 - Recife",
         opcaoVT: true,
@@ -160,10 +165,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 6,
         nome: "Eduardo",
         sobrenome: "Lima",
         sexo: "Masculino",
-        dataNascimento: "06/25/1987",
+        dataNascimento: "1987-06-25",
         grauEscolaridade: "Ensino Superior Incompleto",
         endereco: "Avenida Paulista, 900 - São Paulo",
         opcaoVT: false,
@@ -192,10 +198,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 7,
         nome: "Mariana",
         sobrenome: "Ribeiro",
         sexo: "Feminino",
-        dataNascimento: "12/03/1993",
+        dataNascimento: "1993-03-12",
         grauEscolaridade: "Técnico Completo",
         endereco: "Rua das Palmeiras, 58 - Fortaleza",
         opcaoVT: false,
@@ -224,10 +231,11 @@ export const pessoas = [
         ]
     },
     {
+        id: 8,
         nome: "Bruno",
         sobrenome: "Almeida",
         sexo: "Masculino",
-        dataNascimento: "05/14/1999",
+        dataNascimento: "1999-12-05",
         grauEscolaridade: "Ensino Médio Incompleto",
         endereco: "Rua dos Cravos, 201 - Manaus",
         opcaoVT: true,

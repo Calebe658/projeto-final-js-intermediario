@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Cadastrar funcionários</title>
+    <title>Atualizar Cadastro de Funcionários</title>
     <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 
@@ -39,13 +39,14 @@
                             <label for="escolaridade">Escolaridade:</label>
                             <select name="escolaridade" id="escolaridade" class="form-control" required>
                                 <option value="">Selecione</option>
-                                <option value="Ensino fundamental incompleto">Ensino fundamental incompleto</option>
-                                <option value="Ensino fundamental completo">Ensino fundamental completo</option>
-                                <option value="Ensino médio incompleto">Ensino médio incompleto</option>
-                                <option value="Ensino médio completo">Ensino médio completo</option>
-                                <option value="Ensino superior incompleto">Ensino superior incompleto</option>
-                                <option value="Ensino superior completo">Ensino superior completo</option>
-                                <option value="Pós-graduação">Pós-graduação</option>
+                                <option value="ensino fundamental incompleto">Ensino fundamental incompleto</option>
+                                <option value="ensino fundamental completo">Ensino fundamental completo</option>
+                                <option value="ensino médio incompleto">Ensino médio incompleto</option>
+                                <option value="ensino médio completo">Ensino médio completo</option>
+                                <option value="ensino superior incompleto">Ensino superior incompleto</option>
+                                <option value="ensino superior completo">Ensino superior completo</option>
+                                <option value="pós-graduação">Pós-graduação</option>
+
                             </select>
                         </div>
 
@@ -69,14 +70,9 @@
                             <input type="number" id="passagemDiaria" class="form-control" required>
                         </div>
 
-                         <div class="mb-3">
+                        <div class="mb-3">
                             <label for="dataInicio">Data de Início:</label>
                             <input type="date" id="dataInicio" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="foto">Foto:</label>
-                            <input type="file" name="foto" id="foto" class="">
                         </div>
 
                         <div class="d-flex justify-content-around mb-3">
@@ -110,14 +106,12 @@
 
                     <hr class="mt-5">
 
-                    <div id="resultado">
-
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script type="module" src="../javaScript/atualizarCadastro.js"></script>
 </body>
 
 </html>

@@ -5,3 +5,8 @@
 #resultadoInformacoes img {
     width: 200px;
 }
+
+div p,
+img {
+    margin-left: 1vw;
+}
