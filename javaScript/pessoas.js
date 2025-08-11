@@ -203,7 +203,7 @@ export const pessoas = [
         sobrenome: "Ribeiro",
         sexo: "Feminino",
         dataNascimento: "1993-03-12",
-        grauEscolaridade: "Técnico Completo",
+        grauEscolaridade: "Pós-graduação",
         endereco: "Rua das Palmeiras, 58 - Fortaleza",
         opcaoVT: false,
         salario: 22848.78,

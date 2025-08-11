@@ -17,8 +17,8 @@ if (pessoa) {
     document.getElementById('endereco').value = pessoa.endereco;
     document.getElementById('salario').value = pessoa.salario;
     document.getElementById('passagemDiaria').value = pessoa.passagemDiaria;
-    // document.getElementById('dataInicio').value = pessoa.dataInicio;
-    // document.getElementById('cargo').value = pessoa.cargo;
+    document.getElementById('dataInicio').value = pessoa.historico[pessoa.historico.length - 1].dataInicio;
+    document.getElementById('cargo').value = pessoa.historico[pessoa.historico.length - 1].cargo;
 
     // Filtro para sexo
     if (pessoa.sexo.toLocaleLowerCase() == "masculino") {
