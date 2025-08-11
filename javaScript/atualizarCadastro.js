@@ -1,12 +1,14 @@
 import { pessoas } from './pessoas.js';
 
 // window.location.search pega tudo que foi passado a passado a partir do ? (inclusive o ?)
-const id = window.location.search.substring(1); // o .substring(1) pega a partir do 2º caractere (índice 1), ou seja, tira o ? do início
+const id = window.location.search.split("?"); // Usar id[1] pq o split separa o id e um array ['', 'id']
+const idUsuario = document.getElementById("id");
 
-// Encontrar o id da pessoa e comparar com o id da página
-const pessoa = pessoas.find(pessoa => pessoa.id == id);
+idUsuario.innerText += ` ${id[1]}`;
 
-// Se o id da pessoa estiver certo
+// Encontra o id da pessoa
+const pessoa = pessoas.find(pessoa => pessoa.id == id[1]);
+
 if (pessoa) {
     document.getElementById('nome').value = pessoa.nome;
     document.getElementById('sobrenome').value = pessoa.sobrenome;
