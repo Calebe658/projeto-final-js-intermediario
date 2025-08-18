@@ -55,5 +55,3 @@ resultado.addEventListener('click', (event) => {
     const card = event.target.closest('.card');
     window.location.href = `./html/atualizarCadastro.html?${card.id}`;
 });
-
-// ${new Date(pessoa.dataNascimento).toLocaleDateString("pt-br")}

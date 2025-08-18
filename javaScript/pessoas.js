@@ -236,7 +236,7 @@ export const pessoas = [
         sobrenome: "Almeida",
         sexo: "Masculino",
         dataNascimento: "1999-12-05",
-        grauEscolaridade: "Ensino Médio Incompleto",
+        grauEscolaridade: "Ensino Medio Incompleto",
         endereco: "Rua dos Cravos, 201 - Manaus",
         opcaoVT: true,
         salario: 1587.36,
@@ -264,3 +264,9 @@ export const pessoas = [
         ]
     }
 ];
+
+localStorage.setItem("Array de Pessoas", JSON.stringify(pessoas)); // Array de pessoas completo
+
+const arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas")); // Recuperando o array
+console.log(arrayPessoas);
+console.log("--------------------------------------------------------------------------------------");
