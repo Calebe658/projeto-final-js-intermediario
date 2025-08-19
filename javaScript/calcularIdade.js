@@ -1,7 +1,7 @@
-export function calcularIdade(pessoas) {
+export function calcularIdade(arrayPessoas) {
     const anoAtual = new Date().getFullYear();
 
-    pessoas.forEach(pessoa => {
+    arrayPessoas.forEach(pessoa => {
         const anoNascimento = new Date(pessoa.dataNascimento).getFullYear();
         pessoa.idade = anoAtual - anoNascimento;
     });

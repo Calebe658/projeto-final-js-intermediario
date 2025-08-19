@@ -1,4 +1,16 @@
-import { pessoas } from './pessoas.js';
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+
+document.getElementById("fotoInput").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Atualiza a imagem de visualização
+            document.getElementById("fotoPreview").src = e.target.result;
+        };
+        reader.readAsDataURL(file); // Converte a imagem para base64
+    }
+});
 
 // window.location.search pega tudo que foi passado a passado a partir do ? (inclusive o ?)
 const id = window.location.search.split("?"); // Usar id[1] pq o split separa o id em um array ['', 'id']
@@ -7,9 +19,10 @@ const idUsuario = document.getElementById("id");
 idUsuario.innerText += `Id do usuário: ${id[1]}`;
 
 // Encontra o id da pessoa
-const pessoa = pessoas.find(pessoa => pessoa.id == id[1]);
+const pessoa = arrayPessoas.find(pessoa => pessoa.id == id[1]);
 
 if (pessoa) {
+    document.getElementById('fotoPreview').src = pessoa.foto;
     document.getElementById('nome').value = pessoa.nome;
     document.getElementById('sobrenome').value = pessoa.sobrenome;
     document.getElementById('dataNascimento').value = pessoa.dataNascimento;
@@ -41,12 +54,11 @@ if (pessoa) {
 document.getElementById("botaoAtualizarCadastro").addEventListener("click", function (event) {
     event.preventDefault();
 
-    const arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
-
     // Encontrar a pessoa pelo id
     const pessoaAtualizada = arrayPessoas.find(p => p.id == pessoa.id);
 
     if (pessoaAtualizada) {
+        const foto = document.getElementById('fotoPreview').src;
         const nome = document.getElementById('nome').value;
         const sobrenome = document.getElementById('sobrenome').value;
         const dataNascimento = document.getElementById('dataNascimento').value;
@@ -60,6 +72,10 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
         const dataInicio = document.getElementById('dataInicio').value;
         const cargo = document.getElementById('cargo').value;
 
+        if (foto != pessoaAtualizada.foto) {
+            pessoaAtualizada.foto = foto;
+        }
+
         if (nome != pessoaAtualizada.nome) {
             pessoaAtualizada.nome = nome;
         }
@@ -72,7 +88,7 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
             pessoaAtualizada.dataNascimento = dataNascimento;
         }
 
-        if (escolaridade != pessoaAtualizada.escolaridade) {
+        if (escolaridade != pessoaAtualizada.grauEscolaridade) {
             pessoaAtualizada.grauEscolaridade = escolaridade;
         }
 
@@ -95,7 +111,7 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
         }
 
         const valeTransporte = document.getElementById('valeTransporte-sim').checked;
-        if (valeTransporte != pessoaAtualizada.valeTransporte) {
+        if (valeTransporte != pessoaAtualizada.opcaoVT) {
             pessoaAtualizada.opcaoVT = valeTransporte;
         }
 

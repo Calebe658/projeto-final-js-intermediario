@@ -1,4 +1,4 @@
-import { pessoas } from './pessoas.js';
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
 
 const input = document.getElementById('pessoa-input');
 const resultadoInformacoes = document.getElementById('resultadoInformacoes');
@@ -14,7 +14,7 @@ input.addEventListener('input', () => {
         return;
     }
 
-    const nomesFiltrados = pessoas.filter(pessoa => {
+    const nomesFiltrados = arrayPessoas.filter(pessoa => {
         return pessoa.nome.toLowerCase().includes(nomeDigitado);
     });
 

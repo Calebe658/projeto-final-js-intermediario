@@ -264,9 +264,3 @@ export const pessoas = [
         ]
     }
 ];
-
-localStorage.setItem("Array de Pessoas", JSON.stringify(pessoas)); // Array de pessoas completo
-
-const arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas")); // Recuperando o array
-console.log(arrayPessoas);
-console.log("--------------------------------------------------------------------------------------");

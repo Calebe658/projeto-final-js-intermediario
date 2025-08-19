@@ -1,11 +1,12 @@
-import { pessoas } from './pessoas.js';
 import { calcularIdade } from './calcularIdade.js';
 import { desconto } from './calcularDesconto.js';
 import { descontoFGTS } from './calcularDescontoFGTS.js';
 
-calcularIdade(pessoas);
-desconto(pessoas);
-descontoFGTS(pessoas);
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+
+calcularIdade(arrayPessoas);
+desconto(arrayPessoas);
+descontoFGTS(arrayPessoas);
 
 const input = document.getElementById('pessoa-input');
 const resultado = document.getElementById('resultadoInformacoes');
@@ -17,7 +18,7 @@ input.addEventListener('input', () => {
 
     if (nomeDigitado === "") return;
 
-    const pessoasFiltradas = pessoas.filter(pessoa =>
+    const pessoasFiltradas = arrayPessoas.filter(pessoa =>
         pessoa.nome.toLowerCase().includes(nomeDigitado)
     );
 
