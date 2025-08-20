@@ -1,33 +1,36 @@
-import { calcularIdade } from './calcularIdade.js';
-import { desconto } from './calcularDesconto.js';
-import { descontoFGTS } from './calcularDescontoFGTS.js';
+import { calcularIdade } from "./calcularIdade.js";
+import { desconto } from "./calcularDesconto.js";
+import { descontoFGTS } from "./calcularDescontoFGTS.js";
+import { pessoas } from "./pessoas.js";
 
-let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"))
+  ? JSON.parse(localStorage.getItem("Array de Pessoas"))
+  : pessoas;
 
 calcularIdade(arrayPessoas);
 desconto(arrayPessoas);
 descontoFGTS(arrayPessoas);
 
-const input = document.getElementById('pessoa-input');
-const resultado = document.getElementById('resultadoInformacoes');
-const botao = document.getElementById('buscar-btn');
+const input = document.getElementById("pessoa-input");
+const resultado = document.getElementById("resultadoInformacoes");
+const botao = document.getElementById("buscar-btn");
 
-input.addEventListener('input', () => {
-    const nomeDigitado = input.value.trim().toLowerCase();
-    resultado.innerHTML = "";
+input.addEventListener("input", () => {
+  const nomeDigitado = input.value.trim().toLowerCase();
+  resultado.innerHTML = "";
 
-    if (nomeDigitado === "") return;
+  if (nomeDigitado === "") return;
 
-    const pessoasFiltradas = arrayPessoas.filter(pessoa =>
-        pessoa.nome.toLowerCase().includes(nomeDigitado)
-    );
+  const pessoasFiltradas = arrayPessoas.filter((pessoa) =>
+    pessoa.nome.toLowerCase().includes(nomeDigitado)
+  );
 
-    if (pessoasFiltradas.length > 0) {
-        pessoasFiltradas.forEach((pessoa, index) => {
-            const card = document.createElement('div');
-            card.className = 'mb-3';
+  if (pessoasFiltradas.length > 0) {
+    pessoasFiltradas.forEach((pessoa, index) => {
+      const card = document.createElement("div");
+      card.className = "mb-3";
 
-            card.innerHTML = `
+      card.innerHTML = `
                 <div class="card" id="${pessoa.id}">
                     <h2>Informações da Pessoa:</h2>
                     <p><b>Nome:</b> ${pessoa.nome} ${pessoa.sobrenome}</p>
@@ -44,15 +47,14 @@ input.addEventListener('input', () => {
                     <img src="${pessoa.foto}" alt="Foto Da Pessoa" style="max-width: 150px; margin-bottom: 20px;">
                 </div>`;
 
-            resultado.appendChild(card);
-        });
-
-    } else {
-        resultado.innerHTML = `<p class="text-center" style="color: red;">Pessoa não encontrada</p>`;
-    }
+      resultado.appendChild(card);
+    });
+  } else {
+    resultado.innerHTML = `<p class="text-center" style="color: red;">Pessoa não encontrada</p>`;
+  }
 });
 
-resultado.addEventListener('click', (event) => {
-    const card = event.target.closest('.card');
-    window.location.href = `./html/atualizarCadastro.html?${card.id}`;
+resultado.addEventListener("click", (event) => {
+  const card = event.target.closest(".card");
+  window.location.href = `./html/atualizarCadastro.html?${card.id}`;
 });

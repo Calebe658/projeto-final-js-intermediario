@@ -1,26 +1,30 @@
-let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+import { pessoas } from "./pessoas.js";
 
-const input = document.getElementById('pessoa-input');
-const resultadoInformacoes = document.getElementById('resultadoInformacoes');
-const sugestoes = document.getElementById('sugestoes');
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"))
+  ? JSON.parse(localStorage.getItem("Array de Pessoas"))
+  : pessoas;
 
-input.addEventListener('input', () => {
-    const nomeDigitado = input.value.trim().toLowerCase();
+const input = document.getElementById("pessoa-input");
+const resultadoInformacoes = document.getElementById("resultadoInformacoes");
+const sugestoes = document.getElementById("sugestoes");
 
-    sugestoes.innerHTML = '';
+input.addEventListener("input", () => {
+  const nomeDigitado = input.value.trim().toLowerCase();
 
-    if (nomeDigitado === '') {
-        resultadoInformacoes.innerHTML = '';
-        return;
-    }
+  sugestoes.innerHTML = "";
 
-    const nomesFiltrados = arrayPessoas.filter(pessoa => {
-        return pessoa.nome.toLowerCase().includes(nomeDigitado);
-    });
+  if (nomeDigitado === "") {
+    resultadoInformacoes.innerHTML = "";
+    return;
+  }
 
-    nomesFiltrados.forEach(pessoa => {
-        const option = document.createElement('option');
-        option.value = pessoa.nome;
-        sugestoes.appendChild(option);
-    });
+  const nomesFiltrados = arrayPessoas.filter((pessoa) => {
+    return pessoa.nome.toLowerCase().includes(nomeDigitado);
+  });
+
+  nomesFiltrados.forEach((pessoa) => {
+    const option = document.createElement("option");
+    option.value = pessoa.nome;
+    sugestoes.appendChild(option);
+  });
 });
