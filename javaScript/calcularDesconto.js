@@ -1,6 +1,5 @@
 export function desconto(pessoas) {
-
-    pessoas.forEach(pessoa => {
+    pessoas?.forEach((pessoa) => {
         if (pessoa.opcaoVT) {
             const salario = pessoa.salario;
 
@@ -14,22 +13,23 @@ export function desconto(pessoas) {
             let descontoFuncionario;
             let debitoEmpresa;
 
-            if (descontoMaximo < passagem) { // Quando a empresa tiver q pagar algo também
+            if (descontoMaximo < passagem) {
+                // Quando a empresa tiver q pagar algo também
                 descontoFuncionario = descontoMaximo;
                 debitoEmpresa = passagem - descontoMaximo;
 
-            } else { // Quando a empresa não tiver q pagar nada
+            } else {
+                // Quando a empresa não tiver q pagar nada
                 descontoFuncionario = passagem; // Recebe a passagem pq se ele gastar menos q os 6% vai ser debitado o valor correto em vez de 6%
                 debitoEmpresa = 0;
             }
 
             pessoa.desconto = descontoFuncionario.toFixed(2);
             pessoa.debitoEmpresa = debitoEmpresa.toFixed(2);
-
+            
         } else {
             pessoa.desconto = `Não optou pelo VT`;
             pessoa.debitoEmpresa = 0;
         }
     });
 }
-

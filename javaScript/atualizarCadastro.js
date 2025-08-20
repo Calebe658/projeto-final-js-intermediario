@@ -1,4 +1,10 @@
-let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+import { pessoas } from "./pessoas.js";
+
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas")) // true
+    ? JSON.parse(localStorage.getItem("Array de Pessoas"))
+    : JSON.parse(
+        localStorage.setItem("Array de Pessoas", JSON.stringify(pessoas))
+    );
 
 document.getElementById("fotoInput").addEventListener("change", function (event) {
     const file = event.target.files[0];
@@ -19,19 +25,19 @@ const idUsuario = document.getElementById("id");
 idUsuario.innerText += `Id do usuário: ${id[1]}`;
 
 // Encontra o id da pessoa
-const pessoa = arrayPessoas.find(pessoa => pessoa.id == id[1]);
+const pessoa = arrayPessoas.find((pessoa) => pessoa.id == id[1]);
 
 if (pessoa) {
-    document.getElementById('fotoPreview').src = pessoa.foto;
-    document.getElementById('nome').value = pessoa.nome;
-    document.getElementById('sobrenome').value = pessoa.sobrenome;
-    document.getElementById('dataNascimento').value = pessoa.dataNascimento;
-    document.getElementById('escolaridade').value = pessoa.grauEscolaridade.toLocaleLowerCase();
-    document.getElementById('endereco').value = pessoa.endereco;
-    document.getElementById('salario').value = pessoa.salario;
-    document.getElementById('passagemDiaria').value = pessoa.passagemDiaria;
-    document.getElementById('dataInicio').value = pessoa.historico[pessoa.historico.length - 1].dataInicio;
-    document.getElementById('cargo').value = pessoa.historico[pessoa.historico.length - 1].cargo;
+    document.getElementById("fotoPreview").src = pessoa.foto;
+    document.getElementById("nome").value = pessoa.nome;
+    document.getElementById("sobrenome").value = pessoa.sobrenome;
+    document.getElementById("dataNascimento").value = pessoa.dataNascimento;
+    document.getElementById("escolaridade").value = pessoa.grauEscolaridade.toLocaleLowerCase();
+    document.getElementById("endereco").value = pessoa.endereco;
+    document.getElementById("salario").value = pessoa.salario;
+    document.getElementById("passagemDiaria").value = pessoa.passagemDiaria;
+    document.getElementById("dataInicio").value = pessoa.historico[pessoa.historico.length - 1].dataInicio;
+    document.getElementById("cargo").value = pessoa.historico[pessoa.historico.length - 1].cargo;
 
     // Filtro para sexo
     if (pessoa.sexo.toLocaleLowerCase() == "masculino") {
@@ -55,22 +61,22 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
     event.preventDefault();
 
     // Encontrar a pessoa pelo id
-    const pessoaAtualizada = arrayPessoas.find(p => p.id == pessoa.id);
+    const pessoaAtualizada = arrayPessoas.find((p) => p.id == pessoa.id);
 
     if (pessoaAtualizada) {
-        const foto = document.getElementById('fotoPreview').src;
-        const nome = document.getElementById('nome').value;
-        const sobrenome = document.getElementById('sobrenome').value;
-        const dataNascimento = document.getElementById('dataNascimento').value;
-        const escolaridade = document.getElementById('escolaridade').value;
-        const endereco = document.getElementById('endereco').value;
-        const salario = document.getElementById('salario').value;
-        const passagemDiaria = document.getElementById('passagemDiaria').value;
+        const foto = document.getElementById("fotoPreview").src;
+        const nome = document.getElementById("nome").value;
+        const sobrenome = document.getElementById("sobrenome").value;
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const escolaridade = document.getElementById("escolaridade").value;
+        const endereco = document.getElementById("endereco").value;
+        const salario = document.getElementById("salario").value;
+        const passagemDiaria = document.getElementById("passagemDiaria").value;
 
         // LEMBRAR DE USAR O HISTORICO PARA PEGAR OQ TÁ NA ARRAY DE OBJ
         const historico = pessoaAtualizada.historico[pessoaAtualizada.historico.length - 1];
-        const dataInicio = document.getElementById('dataInicio').value;
-        const cargo = document.getElementById('cargo').value;
+        const dataInicio = document.getElementById("dataInicio").value;
+        const cargo = document.getElementById("cargo").value;
 
         if (foto != pessoaAtualizada.foto) {
             pessoaAtualizada.foto = foto;
@@ -105,12 +111,12 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
         }
 
         // Se verdadeiro == masculino / Se falso == feminino
-        const sexo = document.getElementById('Masculino').checked ? 'Masculino' : 'Feminino';
+        const sexo = document.getElementById("Masculino").checked ? "Masculino" : "Feminino";
         if (sexo != pessoaAtualizada.sexo) {
             pessoaAtualizada.sexo = sexo;
         }
 
-        const valeTransporte = document.getElementById('valeTransporte-sim').checked;
+        const valeTransporte = document.getElementById("valeTransporte-sim").checked;
         if (valeTransporte != pessoaAtualizada.opcaoVT) {
             pessoaAtualizada.opcaoVT = valeTransporte;
         }
@@ -125,6 +131,6 @@ document.getElementById("botaoAtualizarCadastro").addEventListener("click", func
 
         // Sobreesreve no localStorage
         localStorage.setItem("Array de Pessoas", JSON.stringify(arrayPessoas));
-        console.log(arrayPessoas);
+        window.location.href = `../index.html`;
     }
 });

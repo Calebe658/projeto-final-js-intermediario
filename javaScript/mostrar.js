@@ -1,32 +1,32 @@
-import { calcularIdade } from './calcularIdade.js';
-import { desconto } from './calcularDesconto.js';
-import { descontoFGTS } from './calcularDescontoFGTS.js';
+import { calcularIdade } from "./calcularIdade.js";
+import { desconto } from "./calcularDesconto.js";
+import { descontoFGTS } from "./calcularDescontoFGTS.js";
+import { pessoas } from "./pessoas.js";
 
-let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"));
+let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas")) ? JSON.parse(localStorage.getItem("Array de Pessoas")) : pessoas;
 
 calcularIdade(arrayPessoas);
 desconto(arrayPessoas);
 descontoFGTS(arrayPessoas);
 
-const input = document.getElementById('pessoa-input');
-const resultado = document.getElementById('resultadoInformacoes');
-const botao = document.getElementById('buscar-btn');
+const input = document.getElementById("pessoa-input");
+const resultado = document.getElementById("resultadoInformacoes");
+const botao = document.getElementById("buscar-btn");
 
-input.addEventListener('input', () => {
+input.addEventListener("input", () => {
     const nomeDigitado = input.value.trim().toLowerCase();
     resultado.innerHTML = "";
 
     if (nomeDigitado === "") return;
 
-    const pessoasFiltradas = arrayPessoas.filter(pessoa =>
+    const pessoasFiltradas = arrayPessoas.filter((pessoa) =>
         pessoa.nome.toLowerCase().includes(nomeDigitado)
     );
 
     if (pessoasFiltradas.length > 0) {
         pessoasFiltradas.forEach((pessoa, index) => {
-            const card = document.createElement('div');
-            card.className = 'mb-3';
-
+            const card = document.createElement("div");
+            card.className = "mb-3";
             card.innerHTML = `
                 <div class="card" id="${pessoa.id}">
                     <h2>Informações da Pessoa:</h2>
@@ -52,7 +52,7 @@ input.addEventListener('input', () => {
     }
 });
 
-resultado.addEventListener('click', (event) => {
-    const card = event.target.closest('.card');
+resultado.addEventListener("click", (event) => {
+    const card = event.target.closest(".card");
     window.location.href = `./html/atualizarCadastro.html?${card.id}`;
 });
