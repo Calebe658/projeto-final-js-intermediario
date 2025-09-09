@@ -17,7 +17,7 @@ export function desconto(pessoas) {
                 // Quando a empresa tiver q pagar algo também
                 descontoFuncionario = descontoMaximo;
                 debitoEmpresa = passagem - descontoMaximo;
-                
+
             } else {
                 // Quando a empresa não tiver q pagar nada
                 descontoFuncionario = passagem; // Recebe a passagem pq se ele gastar menos q os 6% vai ser debitado o valor correto em vez de 6%

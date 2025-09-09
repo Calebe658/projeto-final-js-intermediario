@@ -2,9 +2,7 @@ import { pessoas } from "./pessoas.js";
 
 let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas")) // true
     ? JSON.parse(localStorage.getItem("Array de Pessoas"))
-    : JSON.parse(
-        localStorage.setItem("Array de Pessoas", JSON.stringify(pessoas))
-    );
+    : JSON.parse(localStorage.setItem("Array de Pessoas", JSON.stringify(pessoas)));
 
 document.getElementById("fotoInput").addEventListener("change", function (event) {
     const file = event.target.files[0];
