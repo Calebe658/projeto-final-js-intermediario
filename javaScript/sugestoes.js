@@ -1,8 +1,20 @@
-import { pessoas } from "./pessoas.js";
+(function () {
+    carregarListaFuncionarios()
+})();
 
-let arrayPessoas = JSON.parse(localStorage.getItem("Array de Pessoas"))
-    ? JSON.parse(localStorage.getItem("Array de Pessoas"))
-    : pessoas;
+let listaFuncionarios = [];
+
+function carregarListaFuncionarios() {
+    fetch('https://node-vercel-app-rho.vercel.app/api/funcionarios', {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+    })
+        .then(resp => resp.json())
+        .then(dados => {
+            listaFuncionarios = dados;
+        })
+        .catch(err => console.error("Erro na requisição:", err));
+}
 
 const input = document.getElementById("pessoa-input");
 const resultadoInformacoes = document.getElementById("resultadoInformacoes");
@@ -18,14 +30,14 @@ input.addEventListener("input", () => {
         return;
     }
 
-    const nomesFiltrados = arrayPessoas.filter((pessoa) => {
-        return pessoa.nome.toLowerCase().includes(nomeDigitado);
+    const nomesFiltrados = listaFuncionarios.filter((pessoa) => {
+        return pessoa.funcionario.nome.toLowerCase().includes(nomeDigitado);
     });
 
     nomesFiltrados.forEach((pessoa) => {
         const option = document.createElement("option");
-        option.value = pessoa.nome;
+        option.value = pessoa.funcionario.nome;
         sugestoes.appendChild(option);
-        localStorage.setItem("Array de Pessoas", JSON.stringify(arrayPessoas));
+
     });
 });
