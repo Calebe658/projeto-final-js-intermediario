@@ -23,6 +23,7 @@ function carregarListaFuncionarios() {
 
 const input = document.getElementById("pessoa-input");
 const resultado = document.getElementById("resultadoInformacoes");
+const botao = document.getElementById("buscar-btn");
 
 input.addEventListener("input", () => {
     const nomeDigitado = input.value.trim().toLowerCase();
