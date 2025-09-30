@@ -31,12 +31,12 @@ input.addEventListener("input", () => {
     }
 
     const nomesFiltrados = listaFuncionarios.filter((pessoa) => {
-        return pessoa.funcionario.nome.toLowerCase().includes(nomeDigitado);
+        return pessoa.nome.toLowerCase().includes(nomeDigitado);
     });
 
     nomesFiltrados.forEach((pessoa) => {
         const option = document.createElement("option");
-        option.value = pessoa.funcionario.nome;
+        option.value = pessoa.nome;
         sugestoes.appendChild(option);
 
     });

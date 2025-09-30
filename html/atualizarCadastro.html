@@ -84,6 +84,11 @@
                             <input type="date" id="dataInicio" class="form-control" required>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="foto">Foto: (colocar o link)</label>
+                            <input type="text" name="foto" id="foto" class="form-control" required>
+                        </div>
+
                         <div class="d-flex justify-content-around mb-3">
                             <div>
                                 <label class="form-label">Opção pelo VT:</label>
@@ -108,8 +113,14 @@
                             </div>
                         </div>
 
-                        <button id="botaoAtualizarCadastro" class="btn btn-primary w-100 mt-3">
+                        <button type="button" id="botaoAtualizarCadastro" class="btn btn-primary w-100 mt-3"
+                            onclick="atualizarFuncionario()">
                             Atualizar Cadastro
+                        </button>
+
+                        <button type="button" id="botaoDelete" class="btn btn-danger w-100 mt-3"
+                            onclick="deletarFuncionario()">
+                            Deletar
                         </button>
                     </form>
 
@@ -118,7 +129,10 @@
             </div>
         </div>
     </div>
-    <script src="../javaScript/atualizarCadastro2.js"></script>
+
+    <script src="../javaScript/preencherCadastro.js"></script>
+    <script src="../javaScript/atualizarCadastro.js"></script>
+    <script src="../javaScript/deletar.js"></script>
 </body>
 
 </html>

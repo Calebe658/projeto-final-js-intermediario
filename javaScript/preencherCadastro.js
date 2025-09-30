@@ -16,7 +16,7 @@ function carregarDetalhesFuncionario() {
     })
         .then(resp => resp.json())
         .then(dados => {
-            funcionario = dados.funcionario; // dados.funcionario pq o parametro "dados" pega tanto o _id quanto o funcionario
+            funcionario = dados;
             console.log(funcionario);
 
             preencherDados(funcionario);
@@ -27,7 +27,8 @@ function carregarDetalhesFuncionario() {
 // Colocar os dados do Funcionário encontrado pelo id nos inputs
 
 function preencherDados(funcionario) {
-    // document.getElementById("fotoPreview").src = funcionario.foto;
+    document.getElementById("fotoPreview").src = funcionario.foto;
+    document.getElementById("foto").value = funcionario.foto
     document.getElementById("nome").value = funcionario.nome;
     document.getElementById("sobrenome").value = funcionario.sobrenome;
     document.getElementById("dataNascimento").value = funcionario.dtNascimento;

@@ -32,7 +32,7 @@ input.addEventListener("input", () => {
     if (nomeDigitado === "") return;
 
     const pessoasFiltradas = listaFuncionarios.filter((pessoa) =>
-        pessoa.funcionario.nome.toLowerCase().includes(nomeDigitado)
+        pessoa.nome.toLowerCase().includes(nomeDigitado)
     );
 
     calcularIdade(pessoasFiltradas);
@@ -44,21 +44,21 @@ input.addEventListener("input", () => {
             const card = document.createElement("div");
             card.className = "mb-3";
 
-            let nome = pessoa.funcionario.nome;
-            let sobrenome = pessoa.funcionario.sobrenome;
-            let sexo = pessoa.funcionario.sexo;
-            let dtNascimento = pessoa.funcionario.dtNascimento;
-            let idade = pessoa.funcionario.idade;
-            let grauEscolaridade = pessoa.funcionario.grauEscolaridade;
-            let endereco = pessoa.funcionario.endereco;
-            let cargo = pessoa.funcionario.historicoCargosESalarios[0].cargo;
-            let salarioAtual = pessoa.funcionario.salarioAtual;
-            let descontoFgts = pessoa.funcionario.descontofgts;
-            let valorPassagem = pessoa.funcionario.valorPassagem;
-            let descontoFuncionario = pessoa.funcionario.desconto;
-            let descontoEmpresa = pessoa.funcionario.debitoEmpresa;
+            let nome = pessoa.nome;
+            let sobrenome = pessoa.sobrenome;
+            let sexo = pessoa.sexo;
+            let dtNascimento = pessoa.dtNascimento;
+            let idade = pessoa.idade;
+            let grauEscolaridade = pessoa.grauEscolaridade;
+            let endereco = pessoa.endereco;
+            let cargo = pessoa.historicoCargosESalarios[0].cargo;
+            let salarioAtual = pessoa.salarioAtual;
+            let descontoFgts = pessoa.descontofgts;
+            let valorPassagem = pessoa.valorPassagem;
+            let descontoFuncionario = pessoa.desconto;
+            let descontoEmpresa = pessoa.debitoEmpresa;
 
-            let optouVT = pessoa.funcionario.optouVT ? "Sim" : "Não"; // Verificação rápida
+            let optouVT = pessoa.optouVT ? "Sim" : "Não"; // Verificação rápida
 
             card.innerHTML = `
                 <div class="card" id="${pessoa._id}">
@@ -77,7 +77,7 @@ input.addEventListener("input", () => {
                     <p><b>Valor a descontar do funcionário (Vale Transporte):</b> ${descontoFuncionario}</p>
                     <p><b>Valor a pagar pela empresa (Vale Transporte):</b> ${descontoEmpresa}</p>
                     <p><b>Foto:</b></p>
-                    <img src="${pessoa.funcionario.foto}" alt="Foto Da Pessoa" style="max-width: 150px; margin-bottom: 20px;">
+                    <img src="${pessoa.foto}" alt="Foto Da Pessoa" style="max-width: 150px; margin-bottom: 20px;">
                 </div>`;
 
             resultado.appendChild(card);
