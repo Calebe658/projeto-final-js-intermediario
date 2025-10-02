@@ -36,7 +36,6 @@ function preencherDados(funcionario) {
     document.getElementById("endereco").value = funcionario.endereco;
     document.getElementById("salario").value = funcionario.salarioAtual;
     document.getElementById("passagemDiaria").value = funcionario.valorPassagem;
-    document.getElementById("dataInicio").value = funcionario.historicoCargosESalarios[0].dataInicio;
     document.getElementById("cargo").value = funcionario.historicoCargosESalarios[0].cargo;
 
     // Filtro para sexo
