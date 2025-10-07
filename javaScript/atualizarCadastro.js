@@ -4,7 +4,7 @@ function atualizarFuncionario() {
     let dtNascimento = validador(document.getElementById('dataNascimento').value, "Data de nascimento");
     let grauEscolaridade = validador(document.getElementById('escolaridade').value, "Grau de escolaridade");
     let endereco = validador(document.getElementById('endereco').value, "Endereço");
-    let salarioAtual = validador(document.getElementById('salario').value, "Salário atual");
+    let salarioAtual = validador(document.getElementById('salario').value, "Salário");
     let valorPassagem = validador(document.getElementById('passagemDiaria').value, "Valor da passagem");
     let foto = validador(document.getElementById("foto").value, "Foto");
     let cargo = validador(document.getElementById("cargo").value, "Cargo");
@@ -61,6 +61,8 @@ function atualizarFuncionario() {
 
     let idTeste = window.location.search.split("?");
     let id = idTeste[1];
+
+    // Enviar
 
     fetch(`https://node-vercel-app-rho.vercel.app/api/funcionarios/${id}`, {
         method: "PUT",
