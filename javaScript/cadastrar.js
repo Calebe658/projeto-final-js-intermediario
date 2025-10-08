@@ -8,6 +8,7 @@ function cadastrarFuncionarios() {
     let salarioAtual = validador(document.getElementById('salarioAtual').value, "salário");
     let valorPassagem = validador(document.getElementById('valorPassagem').value, "valor da passagem");
     let foto = validador(document.getElementById("foto").value, "foto");
+    let dtInicio = validador(document.getElementById("dtInicio").value, "data de início");
 
     // Verificações
 
@@ -45,6 +46,12 @@ function cadastrarFuncionarios() {
         }
     }
 
+    let dtDemissao = document.getElementById("dtDemissao").value;
+
+    if (dtDemissao == "") {
+        dtDemissao = null;
+    }
+
     // Validador
 
     function validador(valor, campo) {
@@ -53,15 +60,15 @@ function cadastrarFuncionarios() {
             throw new Error(`O campo ${campo} está vazio`);
         }
 
-        let apenasLetras = /^[a-zA-Z]+$/;
-        let apenasLetrasEnumeros = /^[a-zA-Z0-9]+$/;
+        let apenasLetras = /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]+$/;
+        let apenasLetrasEnumeros = /^[a-zA-Z0-9 ]+$/;
 
         if (campo == "nome" || campo == "sobrenome") {
             if (apenasLetras.test(valor)) {
                 return valor;
 
             } else {
-                alert(`O campo ${campo} deve conter apenas letras.`);
+                alert(`O campo ${campo} deve conter apenas letras e espaços.`);
                 throw new Error(`O campo ${campo} inválido`);
             }
         }
@@ -92,19 +99,13 @@ function cadastrarFuncionarios() {
             grauEscolaridade: grauEscolaridade,
             endereco: endereco,
             foto: foto,
-            salarioAtual: parseFloat(salarioAtual),
+            salario: parseFloat(salarioAtual),
             valorPassagem: parseFloat(valorPassagem),
             optouVT: optouVT,
-            historicoCargosESalarios: [
-                {
-                    cargo: cargo,
-                    salario: 5000,
-                    dataInicio: "2021-01-01",
-                    dataFim: null
-                }
-            ]
+            cargo: cargo,
+            dataInicio: dtInicio,
+            dataDemissao: dtDemissao
         })
-
     })
         .then(resp => {
             if (!resp.ok) {

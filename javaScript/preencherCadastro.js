@@ -34,9 +34,11 @@ function preencherDados(funcionario) {
     document.getElementById("dataNascimento").value = funcionario.dtNascimento;
     document.getElementById("escolaridade").value = funcionario.grauEscolaridade.toLocaleLowerCase();
     document.getElementById("endereco").value = funcionario.endereco;
-    document.getElementById("salario").value = funcionario.salarioAtual;
+    document.getElementById("salario").value = funcionario.salario;
     document.getElementById("passagemDiaria").value = funcionario.valorPassagem;
-    document.getElementById("cargo").value = funcionario.historicoCargosESalarios[0].cargo;
+    document.getElementById("cargo").value = funcionario.cargo;
+    document.getElementById("dtInicio").value = funcionario.dataInicio;
+    document.getElementById("dtDemissao").value = funcionario.dataDemissao;
 
     // Filtro para sexo
     if (funcionario.sexo.toLocaleLowerCase() == "masculino") {

@@ -1,7 +1,7 @@
 export function desconto(pessoasFiltradas) {
     pessoasFiltradas?.forEach((pessoa) => {
         if (pessoa.optouVT) {
-            const salario = pessoa.salarioAtual;
+            const salario = pessoa.salario;
 
             // Desconto máximo do funcionário (6%)
             const descontoMaximo = salario * 0.06;

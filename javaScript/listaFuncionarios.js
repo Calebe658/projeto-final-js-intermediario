@@ -51,12 +51,14 @@ input.addEventListener("input", () => {
             let idade = pessoa.idade;
             let grauEscolaridade = pessoa.grauEscolaridade;
             let endereco = pessoa.endereco;
-            let cargo = pessoa.historicoCargosESalarios[0].cargo;
-            let salarioAtual = pessoa.salarioAtual;
+            let cargo = pessoa.cargo;
+            let salarioAtual = pessoa.salario;
             let descontoFgts = pessoa.descontofgts;
             let valorPassagem = pessoa.valorPassagem;
             let descontoFuncionario = pessoa.desconto;
             let descontoEmpresa = pessoa.debitoEmpresa;
+            let dtInicio = pessoa.dataInicio;
+            let dtDemissao = pessoa.dataDemissao;
 
             let optouVT = pessoa.optouVT ? "Sim" : "Não"; // Verificação rápida
 
@@ -71,6 +73,8 @@ input.addEventListener("input", () => {
                     <p><b>Endereço:</b> ${endereco}</p>
                     <p><b>Cargo:</b> ${cargo}</p>
                     <p><b>Salário:</b> ${salarioAtual}</p>
+                    <p><b>Data de início:</b> ${dtInicio}</p>
+                    <p><b>Data de demissão:</b> ${dtDemissao}</p>
                     <p><b>Valor a pagar pela empresa (FGTS):</b> ${descontoFgts}</p>
                     <p><b>Valor da passagem:</b> ${valorPassagem}</p>
                     <p><b>Optou pelo vale transporte:</b> ${optouVT}</p>

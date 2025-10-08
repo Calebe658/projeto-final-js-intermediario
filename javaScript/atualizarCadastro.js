@@ -1,13 +1,14 @@
 function atualizarFuncionario() {
-    let nome = validador(document.getElementById('nome').value, "Nome");
-    let sobrenome = validador(document.getElementById('sobrenome').value, "Sobrenome");
-    let dtNascimento = validador(document.getElementById('dataNascimento').value, "Data de nascimento");
-    let grauEscolaridade = validador(document.getElementById('escolaridade').value, "Grau de escolaridade");
-    let endereco = validador(document.getElementById('endereco').value, "Endereço");
-    let salarioAtual = validador(document.getElementById('salario').value, "Salário");
-    let valorPassagem = validador(document.getElementById('passagemDiaria').value, "Valor da passagem");
-    let foto = validador(document.getElementById("foto").value, "Foto");
-    let cargo = validador(document.getElementById("cargo").value, "Cargo");
+    let nome = validador(document.getElementById('nome').value, "nome");
+    let sobrenome = validador(document.getElementById('sobrenome').value, "sobrenome");
+    let dtNascimento = validador(document.getElementById('dataNascimento').value, "data de nascimento");
+    let grauEscolaridade = validador(document.getElementById('escolaridade').value, "grau de escolaridade");
+    let endereco = validador(document.getElementById('endereco').value, "endereço");
+    let cargo = validador(document.getElementById("cargo").value, "cargo");
+    let salarioAtual = validador(document.getElementById('salario').value, "salário");
+    let valorPassagem = validador(document.getElementById('passagemDiaria').value, "valor da passagem");
+    let foto = validador(document.getElementById("foto").value, "foto");
+    let dtInicio = validador(document.getElementById("dtInicio").value, "data de início");
 
     // Verificações
 
@@ -45,16 +46,44 @@ function atualizarFuncionario() {
         }
     }
 
+    let dtDemissao = document.getElementById("dtDemissao").value;
+
+    if (dtDemissao == "") {
+        dtDemissao = null;
+    }
+
     // Validador 
 
     function validador(valor, campo) {
         if (valor == undefined || valor == null || valor == "") {
-            alert(`Atenção! Campo ${campo} é obrigatório!`);
-            throw new Error(`Campo ${campo} vazio`);
-
-        } else {
-            return valor;
+            alert(`Atenção! O campo ${campo} é obrigatório!`);
+            throw new Error(`O campo ${campo} está vazio`);
         }
+
+        let apenasLetras = /^[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]+$/;
+        let apenasLetrasEnumeros = /^[a-zA-Z0-9 ]+$/;
+
+        if (campo == "nome" || campo == "sobrenome") {
+            if (apenasLetras.test(valor)) {
+                return valor;
+
+            } else {
+                alert(`O campo ${campo} deve conter apenas letras e espaços.`);
+                throw new Error(`O campo ${campo} inválido`);
+            }
+        }
+
+        if (campo == "cargo") {
+            if (apenasLetrasEnumeros.test(valor)) {
+                return valor;
+
+            } else {
+                alert(`O campo ${campo} deve conter apenas letras e números`);
+                throw new Error(`O campo ${campo} está inválido`);
+            }
+        }
+
+        return valor;
     }
 
     // Pegar o Id
@@ -75,17 +104,12 @@ function atualizarFuncionario() {
             grauEscolaridade: grauEscolaridade,
             endereco: endereco,
             foto: foto,
-            salarioAtual: parseFloat(salarioAtual),
+            salario: parseFloat(salarioAtual),
             valorPassagem: parseFloat(valorPassagem),
             optouVT: optouVT,
-            historicoCargosESalarios: [
-                {
-                    cargo: cargo,
-                    salario: 5000,
-                    dataInicio: "2021-01-01",
-                    dataFim: null
-                }
-            ]
+            cargo: cargo,
+            dataInicio: dtInicio,
+            dataDemissao: dtDemissao
         })
     })
         .then(resp => {
