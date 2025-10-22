@@ -16,7 +16,7 @@ function carregarListaFuncionarios() {
         .then(resp => resp.json())
         .then(dados => {
             listaFuncionarios = dados;
-            console.log(listaFuncionarios);
+            // console.log(listaFuncionarios); CASO QUEIRA VER A LISTA DE FUNCIONÁRIOS COMPLETA BASTA TIRAR O COMENTÁRIO DAQUI
         })
         .catch(err => console.error("Erro na requisição:", err));
 }

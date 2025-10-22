@@ -6,28 +6,33 @@ function atualizarFuncionario() {
     let endereco = validador(document.getElementById('endereco').value, "endereço");
     let cargo = validador(document.getElementById("cargo").value, "cargo");
     let salarioAtual = validador(document.getElementById('salario').value, "salário");
-    let valorPassagem = validador(document.getElementById('passagemDiaria').value, "valor da passagem");
     let foto = validador(document.getElementById("foto").value, "foto");
     let dtInicio = validador(document.getElementById("dtInicio").value, "data de início");
 
-    // Verificações
+    // Verificação vale transporte
 
     let vtSim = document.getElementById('valeTransporte-sim').checked;
     let vtNao = document.getElementById('valeTransporte-nao').checked;
+    let campo = document.getElementById("passagemDiaria");
     let optouVT;
+    let valorPassagem;
 
     if (vtSim) {
         optouVT = true;
+        valorPassagem = validador(campo.value, "valor da passagem");
 
     } else {
         if (vtNao) {
             optouVT = false;
+            valorPassagem = 0;
 
         } else {
-            alert(`Atenção! O campo opção pelo VT é obrigatório`);
+            alert(`Atenção! O campo opção pelo VT é obrigatório.`);
             return;
         }
     }
+
+    // Verificação Sexo
 
     let sexoMasculino = document.getElementById("Masculino");
     let sexoFeminino = document.getElementById("Feminino");
@@ -129,3 +134,19 @@ function atualizarFuncionario() {
             console.error(err);
         });
 }
+
+// Função que vai carregar assim que abrir a página e muda os valores do input de acordo com os valores do radio
+
+window.onload = function () {
+    const campo = document.getElementById("passagemDiaria");
+
+    document.getElementById("valeTransporte-sim").addEventListener("click", () => {
+        campo.disabled = false;
+        campo.value = "";
+    });
+
+    document.getElementById("valeTransporte-nao").addEventListener("click", () => {
+        campo.disabled = true;
+        campo.value = 0;
+    });
+};

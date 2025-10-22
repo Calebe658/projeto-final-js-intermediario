@@ -41,6 +41,7 @@ function preencherDados(funcionario) {
     document.getElementById("dtDemissao").value = funcionario.dataDemissao;
 
     // Filtro para sexo
+
     if (funcionario.sexo.toLocaleLowerCase() == "masculino") {
         document.getElementById("Masculino").checked = true;
 
@@ -49,10 +50,14 @@ function preencherDados(funcionario) {
     }
 
     // Filtro para o vale transporte
+
+    let campo = document.getElementById("passagemDiaria");
+
     if (funcionario.optouVT == true) {
         document.getElementById("valeTransporte-sim").checked = true;
 
     } else {
         document.getElementById("valeTransporte-nao").checked = true;
+        campo.disabled = true;
     }
 }

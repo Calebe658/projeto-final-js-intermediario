@@ -6,28 +6,33 @@ function cadastrarFuncionarios() {
     let endereco = validador(document.getElementById('endereco').value, "endereço");
     let cargo = validador(document.getElementById("cargo").value, "cargo");
     let salarioAtual = validador(document.getElementById('salarioAtual').value, "salário");
-    let valorPassagem = validador(document.getElementById('valorPassagem').value, "valor da passagem");
     let foto = validador(document.getElementById("foto").value, "foto");
     let dtInicio = validador(document.getElementById("dtInicio").value, "data de início");
 
-    // Verificações
+    // Verificação vale transporte
 
     let vtSim = document.getElementById('optouVT-sim').checked;
     let vtNao = document.getElementById('optouVT-nao').checked;
+    let campo = document.getElementById("valorPassagem");
     let optouVT;
+    let valorPassagem;
 
     if (vtSim) {
         optouVT = true;
+        valorPassagem = validador(campo.value, "valor da passagem");
 
     } else {
         if (vtNao) {
             optouVT = false;
+            valorPassagem = 0;
 
         } else {
             alert(`Atenção! O campo opção pelo VT é obrigatório.`);
             return;
         }
     }
+
+    // Verificação sexo
 
     let sexoMasculino = document.getElementById("masculino");
     let sexoFeminino = document.getElementById("feminino");
@@ -124,3 +129,21 @@ function cadastrarFuncionarios() {
             console.error("Erro na requisição:", err);
         });
 }
+
+// Função que vai carregar assim que abrir a página e muda os valores do input de acordo com os valores do radio
+
+window.onload = function () {
+    const campo = document.getElementById("valorPassagem");
+    campo.disabled = true;
+    campo.value = 0;
+
+    document.getElementById("optouVT-sim").addEventListener("click", () => {
+        campo.disabled = false;
+        campo.value = "";
+    });
+
+    document.getElementById("optouVT-nao").addEventListener("click", () => {
+        campo.disabled = true;
+        campo.value = 0;
+    });
+};
